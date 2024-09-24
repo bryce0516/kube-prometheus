@@ -16,8 +16,12 @@ spec:
     - podSelector:
         matchLabels:
           app.kubernetes.io/name: prometheus
+    - ipBlock:
+        cidr: 0.0.0.0/0
     ports:
     - port: 3000
+      protocol: TCP
+    - port: 30001
       protocol: TCP
   podSelector:
     matchLabels:
